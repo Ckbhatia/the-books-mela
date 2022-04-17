@@ -47,6 +47,7 @@ const Google: React.FC<Props> = ({ redirect }): ReactElement | null => {
             onClick={() => {
               renderProps.onClick();
             }}
+            data-testid="google-login"
           >
             <FcGoogle />
           </StyledSocialIconContainer>
