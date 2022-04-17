@@ -2,18 +2,28 @@ import React from "react";
 import styled from "styled-components";
 import { STATUS } from "../constants";
 import { getVolumes } from "../services";
+import { booksResultMock } from "../__mock__/search";
 import Books from "./Books";
 import Spinner from "./Common/Spinner";
 
-const Search = () => {
-  const [inputValue, setInputValue] = React.useState("");
-  const [searchedBooks, setSearchedBooks] = React.useState([]);
+const Search = ({ isTestMode = false }) => {
+  const [inputValue, setInputValue] = React.useState<string>("");
+  const [searchedBooks, setSearchedBooks] = React.useState<any>([]);
   const [status, setStatus] = React.useState<any>(STATUS.IDLE);
+
+  React.useEffect(() => {
+    // Note: this supposed to run for test mode only
+    if (isTestMode) {
+      setStatus(STATUS.PENDING);
+      setSearchedBooks(booksResultMock);
+      setStatus(STATUS.RESOLVED);
+    }
+  }, [isTestMode]);
 
   const handleSearch = () => {
     setStatus(STATUS.PENDING);
     const query = inputValue.replace(/\s/g, "+");
-  
+
     getVolumes(query)
       .then((res: any) => res.json())
       .then((response: any) => {
