@@ -1,12 +1,28 @@
-import './App.css';
-import ProtectedRoutes from './Components/ProtectedRoutes';
-import PublicRoutes from './Components/PublicRoutes';
-import { getIsAuthenticated } from './utils/auth';
+import React from "react";
+import "./App.css";
+import Header from "./Components/Header";
+import ProtectedRoutes from "./Components/ProtectedRoutes";
+import PublicRoutes from "./Components/PublicRoutes";
+import { AuthProvider } from "./Context/AuthContext";
+import { getIsAuthenticated } from "./utils/auth";
 
 function App() {
-const isAuthenticated  = getIsAuthenticated();
+  const [isAuthenticated, setIsAuthenticated] = React.useState(() =>
+    getIsAuthenticated()
+  );
 
-  return isAuthenticated ? <ProtectedRoutes /> : <PublicRoutes />;
+  return (
+    <AuthProvider value={{ isAuthenticated, setIsAuthenticated }}>
+      {isAuthenticated ? (
+        <>
+          <Header />
+          <ProtectedRoutes />
+        </>
+      ) : (
+        <PublicRoutes />
+      )}
+    </AuthProvider>
+  );
 }
 
 export default App;
