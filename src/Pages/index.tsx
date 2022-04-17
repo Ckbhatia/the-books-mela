@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <StyledMain>
       <StyledHeadingContainer>
-        <h1>The Book App</h1>
+        <h1>The books mela</h1>
       </StyledHeadingContainer>
       <StyledSocialLoginContainer>
         <span>Login with</span>
