@@ -35,3 +35,21 @@ This document defines how to run tests for this app.
 
 - Test render social login ✅
   - **Test Title** Social login should be available
+
+
+2. Search books
+
+- Test render search books page ✅
+  - **Test Title** Render Search Books
+
+- Test search input ✅
+  - **Test Title** Search input should render and be working fine
+
+- Test render disabled search button ✅
+  - **Test Title** Search button should be disabled when no input text
+
+- Test render enabled search button ✅
+  - **Test Title** Search button should be enabled when there's input text
+
+- Test render searched book results ✅
+  - **Test Title** Searched book results
