@@ -33,6 +33,8 @@ The app uses the following technologies in the front-end.
    - For production environment, please run `npm run build`.
 
 
+BE repo: [Github](https://github.com/Ckbhatia/the-books-mela-server)
+
 ### Running tests
 Tests are written using React testing library.
 
