@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# The books mela app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Description**: this is a online book store application where cool folks can find their loved book and get details about the same.
 
-## Available Scripts
+### Demo
 
-In the project directory, you can run:
+[Demo](https://www.loom.com/share/ca11407d34d34bfe95b5bcd2e14dd20c) - Video demo
 
-### `npm start`
+## Tech
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The app uses the following technologies in the front-end.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [ReactJS](https://www.npmjs.com/package/react/v/18.0.0) - react (v18.0.0)
+- [Styled-components](https://www.npmjs.com/package/styled-components/v/5.3.5) - styled-components (v5.3.5))
+- [React icons](https://www.npmjs.com/package/react-icons/v/4.3.1) - react-icons
+  (4.3.1)
+- [Typescript](https://www.npmjs.com/package/typescript/v/4.6.3) - typescript (v4.6.3)
+- [React google login](https://www.npmjs.com/package/react-google-login/v/5.2.2) - react-google-login (v5.2.2)
+- [@testing-library/user-event
+  ](https://www.npmjs.com/package/@testing-library/user-event/v/14.1.1) - @testing-library/user-event
+  (v14.1.1)
+- [@testing-library/react](https://www.npmjs.com/package/@testing-library/react/v/13.1.1) - @testing-library/react (v13.1.1)
+- [@testing-library/jest-dom](https://www.npmjs.com/package/@testing-library/jest-dom/v/5.16.4) - @testing-library/jest-dom (v5.16.4)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Run local
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install all dependencies using `npm i` or `yarn`
+2. Run `cp .env.example .env` & then update all the values in `.env`.
+3. Start the app
+   - For development environment, please run `npm run start` or `yarn start` & the app should be available at `http://localhost:3000/`.
+   - For production environment, please run `npm run build`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Running tests
+Tests are written using React testing library.
 
-### `npm run eject`
+1. Make sure you have installed all the required dependencies with `npm i` or `yarn`.
+2. Run the command `yarn test` or `yarn test --watch` to run in watch mode.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Please look at TESTING.md file for more details about tests.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Important Points To Note
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributors
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Chetan Kumar ([Github](https://github.com/Ckbhatia))
