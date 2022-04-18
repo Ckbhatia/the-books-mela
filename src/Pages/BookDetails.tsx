@@ -4,12 +4,21 @@ import styled from "styled-components";
 import Spinner from "../Components/Common/Spinner";
 import { STATUS } from "../constants";
 import { getBookWithId } from "../services";
+import { booksResultMock } from "../__mock__/search";
 
-const BookDetails = () => {
+const BookDetails = ({ isTestMode = false }) => {
   const [bookDetails, setBookDetails] = React.useState<any>(null);
   const [status, setStatus] = React.useState<any>(STATUS.IDLE);
 
   const { id } = useParams();
+
+  React.useEffect(() => {
+    if(isTestMode) {
+      setStatus(STATUS.PENDING);
+      setBookDetails(booksResultMock[1]?.volumeInfo);
+      setStatus(STATUS.RESOLVED);
+    }
+  }, [isTestMode])
 
   React.useEffect(() => {
     if (id) {
@@ -35,7 +44,7 @@ const BookDetails = () => {
   const title = bookDetails?.title;
 
   return (
-    <StyledMainContainer>
+    <StyledMainContainer data-testid="book-details-page">
       <StyledButtonContainer>
         <Link to="/search">
           <button>Back</button>
