@@ -30,7 +30,8 @@ import Spinner from "./Common/Spinner";
 
     if(userInfo?.id && query) {
       // Post book query to server ( save )
-      postBookQuery({userId: userInfo?.id, searchQuery: query})
+      const body = JSON.stringify({userId: userInfo?.id, searchQuery: query});
+      postBookQuery(body);
     }
 
     getVolumes(query)
