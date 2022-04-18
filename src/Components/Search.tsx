@@ -3,14 +3,25 @@ import styled from "styled-components";
 import { AuthContext } from "../Context/AuthContext";
 import { STATUS } from "../constants";
 import { getVolumes, postBookQuery } from "../services";
+import { booksResultMock } from "../__mock__/search";
 import Books from "./Books";
 import Spinner from "./Common/Spinner";
 
-const Search = () => {
+
+  const Search = ({ isTestMode = false }) => {
   const { userInfo } = React.useContext(AuthContext);
   const [inputValue, setInputValue] = React.useState<string>("");
   const [searchedBooks, setSearchedBooks] = React.useState<any>([]);
   const [status, setStatus] = React.useState<any>(STATUS.IDLE);
+
+  React.useEffect(() => {
+    // Note: this supposed to run for test mode only
+    if (isTestMode) {
+      setStatus(STATUS.PENDING);
+      setSearchedBooks(booksResultMock);
+      setStatus(STATUS.RESOLVED);
+    }
+  }, [isTestMode]);
 
   const handleSearch = () => {
     setStatus(STATUS.PENDING);
