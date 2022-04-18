@@ -53,3 +53,12 @@ This document defines how to run tests for this app.
 
 - Test render searched book results ✅
   - **Test Title** Searched book results
+
+
+3. Header
+
+- Test render header ✅
+  - **Test Title** Render Search Books
+
+- Test render log out button ✅
+  - **Test Title** Log out button should be available
