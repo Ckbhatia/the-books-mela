@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import Search from "../Components/Search";
 
-const SearchBooks = () => {
+const SearchBooks = ({ isTestMode = false }) => {
   return (
     <StyledMainContainer>
       <StyledHeadingContainer>
         <h1>Search Books</h1>
       </StyledHeadingContainer>
-      <Search />
+      <Search isTestMode={isTestMode} />
     </StyledMainContainer>
   );
 };
