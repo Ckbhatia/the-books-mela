@@ -26,7 +26,7 @@ This document defines how to run tests for this app.
 🔺 Partial ( couldn't test well as it requires more research and effort )
 
 
-#### tests
+#### Tests
 
 1. Home page
 
@@ -55,7 +55,22 @@ This document defines how to run tests for this app.
   - **Test Title** Searched book results
 
 
-3. Header
+3. Book details page
+
+- Test render book details page ✅
+  - **Test Title** Render Book details
+
+- Test book details ✅
+  - **Test Title** Book details should be available
+
+- Test book details image ✅
+  - **Test Title** Book image should be available
+
+- Test back button ✅
+  - **Test Title** Back button should be available
+
+
+4. Header
 
 - Test render header ✅
   - **Test Title** Render Search Books
