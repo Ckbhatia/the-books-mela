@@ -8,3 +8,12 @@ export const getToken = async () => {
 
   return null;
 }
+
+export const getUserInfo = async () => {
+  const userInfo = await localStorage.getItem(USER_INFO_TEXT);
+  if(userInfo) {
+    return JSON.parse(userInfo);
+  }
+  
+  return null;
+}
