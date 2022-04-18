@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { AuthContext } from "../Context/AuthContext";
 import { STATUS } from "../constants";
-import { getVolumes } from "../services";
+import { getVolumes, postBookQuery } from "../services";
 import { booksResultMock } from "../__mock__/search";
 import Books from "./Books";
 import Spinner from "./Common/Spinner";
 
-const Search = ({ isTestMode = false }) => {
+
+  const Search = ({ isTestMode = false }) => {
+  const { userInfo } = React.useContext(AuthContext);
   const [inputValue, setInputValue] = React.useState<string>("");
   const [searchedBooks, setSearchedBooks] = React.useState<any>([]);
   const [status, setStatus] = React.useState<any>(STATUS.IDLE);
@@ -23,6 +26,12 @@ const Search = ({ isTestMode = false }) => {
   const handleSearch = () => {
     setStatus(STATUS.PENDING);
     const query = inputValue.replace(/\s/g, "+");
+  
+
+    if(userInfo?.id && query) {
+      // Post book query to server ( save )
+      postBookQuery({userId: userInfo?.id, searchQuery: query})
+    }
 
     getVolumes(query)
       .then((res: any) => res.json())
