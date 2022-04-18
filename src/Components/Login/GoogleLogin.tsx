@@ -22,11 +22,10 @@ const Google: React.FC<Props> = ({ redirect }): ReactElement | null => {
 
   const responseGoogle = (response: any) => {
     const token = response?.accessToken;
-    const email = response?.profileObj?.email;
-    const name = response?.profileObj?.name;
+    const id = response?.profileObj?.googleId;
 
     if (token) {
-      localStorage.setItem(USER_INFO_TEXT, JSON.stringify({ token, email, name }));
+      localStorage.setItem(USER_INFO_TEXT, JSON.stringify({ token, id }));
       redirect(routes.search);
     }
   };
